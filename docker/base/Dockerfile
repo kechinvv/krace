@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:experimental
 
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 ENV IN_RACER_DOCKER 1
 ENV DEBIAN_FRONTEND noninteractive
@@ -28,6 +28,10 @@ RUN echo "[racer] <base> start" && \
 	pip3 install \
 		asciitree termcolor \
 		sortedcontainers \
+		markupsafe==2.0 \
+		sphinx==2.1 \
+		jinja2==3.0 \
+		docutils==0.17 \
 		lark-parser graphviz PySide2 && \
 	\
 	cd /root && \
